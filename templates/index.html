@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Assistant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-brain"></i>
+                <h1>Research Assistant</h1>
+            </div>
+            <p class="tagline">Your intelligent guide to knowledge exploration</p>
+        </header>
+
+        <main class="main-content">
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="queryInput" placeholder="What would you like to research today?">
+                    <button id="searchButton">
+                        <i class="fas fa-search"></i>
+                        Research
+                    </button>
+                </div>
+                <div class="examples">
+                    <p>Try searching for: <span class="example-query">machine learning</span>, <span class="example-query">climate change</span>, <span class="example-query">renewable energy</span></p>
+                </div>
+            </div>
+
+            <div id="loadingIndicator" class="loading-container hidden">
+                <div class="loading-spinner"></div>
+                <p>Researching your topic...</p>
+            </div>
+
+            <div id="resultsContainer" class="results-container hidden">
+                <div class="result-section definition-section">
+                    <h2><i class="fas fa-info-circle"></i> Definition</h2>
+                    <div id="definitionContent" class="content-box"></div>
+                </div>
+
+                <div class="result-section suggestions-section">
+                    <h2><i class="fas fa-lightbulb"></i> Suggested Resources</h2>
+                    <div id="suggestionsContent" class="content-box">
+                        <div class="suggestions-grid" id="suggestionsGrid"></div>
+                    </div>
+                </div>
+
+                <div class="result-section questions-section">
+                    <h2><i class="fas fa-question-circle"></i> Related Questions</h2>
+                    <div id="questionsContent" class="content-box">
+                        <ul id="questionsList"></ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Research Assistant | Powered by AI</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
